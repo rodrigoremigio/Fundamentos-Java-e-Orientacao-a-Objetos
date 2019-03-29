@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class OperadoresLogicos {
+	
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Nome: ");
+		String nome = entrada.nextLine();
+		
+		System.out.print("Peso: ");
+		int peso = entrada.nextInt();
+		
+		System.out.print("Altura: ");
+		double altura = entrada.nextDouble();
+		
+		System.out.print("Genero (1 para M ou outro numero para F): ");
+		char genero = entrada.nextShort() == 1 ? 'M' : 'F';
+		
+		double imc = peso / (altura * altura);
+		System.out.println("IMC de " + nome + ": " + imc);
+		
+		if ((genero == 'F' && imc < 19.1) || (genero == 'M' && imc < 20.7)) {
+			System.out.println("Abaixo do peso");
+		} else if ((genero == 'F' && imc < 25.8) || (genero == 'M' && imc < 26.4)) {
+			System.out.println("Peso ideal");
+		} else if ((genero == 'F' && imc < 27.3) || (genero == 'M' && imc < 27.8)) {
+			System.out.println("Um pouco acima do peso");
+		} else if ((genero == 'F' && imc > 27.3) || (genero == 'M' && imc > 27.8)) {
+			System.out.println("Acima do peso");
+		}
+	}
+}
