@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class EstruturasDeControleIfElse {
+	
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in) ;
+		
+		System.out.print("Nome: ");
+		String nome = entrada.nextLine();
+		
+		System.out.print("Peso: ");
+		int peso = entrada.nextInt();
+		
+		System.out.print("Altura: ");
+		double altura = entrada.nextDouble();
+		
+		double imc = peso / (altura * altura);
+		System.out.println("IMC de " + nome + ": " + imc);
+		
+		if (imc < 18.5) {
+			System.out.println("Voce esta abaixo do peso ideal");
+		} else if (imc <25) {
+			System.out.println("Voce esta no peso ideal");
+		} else if (imc < 30) {
+			System.out.println("Voce esta acima do peso ideal");
+		} else if (imc <40) {
+			System.out.println("Voce esta com obesidade");
+		} else {
+			System.out.println("Voce esta com uma obesidade muito grave");
+		}
+	}
+}
